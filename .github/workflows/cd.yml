@@ -16,7 +16,7 @@ jobs:
     strategy:
       matrix:
         os: [macos, linux]
-        arch: [x86_64, aarch64, armv7]
+        arch: [x86_64, aarch64]
         rust: [stable]
         artifact_type: ['slim', 'default', 'full']  # The build strategy will build all types for each OS specified
         include:
@@ -40,9 +40,6 @@ jobs:
           - artifact_type: full
             dbus: dbus_mpris
           # Cross Compilation Targets
-          - os: linux
-            arch: armv7
-            target: armv7-unknown-linux-gnueabihf
           # Audio backend configuration: Linux
           - os: linux
             artifact_type: slim
